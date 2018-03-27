@@ -1,0 +1,5 @@
+{
+  "preset": ['react','es2015','stage-2']
+}
+
+// to work our babel preset

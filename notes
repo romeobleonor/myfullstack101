@@ -1,0 +1,126 @@
+# We use mongoDB for database
+# node as both api server on top of the dbase and web server to host all our assest
+# React on the front-end to consume our api data & build a user interface
+# adopt the server first strategy - application tobe isomorphic which means it will render initial HTML for all supported routes - help SEO
+
+# Learn full-stack javascript development by building a web application w/ MongoDB, Node.js and React.js
+
+  - Learn how to use node as web server & api
+  - How to consume data
+  - Build user interface w/ react
+  - How to read and write data w/ mongoDB
+  - Emphasis functional method & open-source tools
+  
+1: Modern javascript
+
+# Scope
+  - block scope - is ideal solution for for loop
+  - function scope
+  - const - protected, if const is assign to an object, you can still change its property value but not the object itself - it is important for importing libarary and commongly use for defining function
+
+# Function
+  - arrow function - good for returning somthing in one line
+  - shorthand notiation of function
+  - lexically scoped - availableon their parent
+  
+  
+  let util = {
+    f1: function(){
+      console.log(this)
+    },
+    f2: () => {
+      console.log(this)
+    }
+  }
+
+
+# object
+  - omit the property value with the same name
+  - ready using desctructure syntax
+
+  // const square = X.square //instead
+  const {square} = X
+  const {maya,aquil,stanlee} = Kids
+  
+  - destructuring works inside thefunction argument
+  
+  
+  const toDecimal = ({base  = 2, number}) => {
+    return parseInt(base, number)
+  }
+  
+  // old ways
+  const toDecimal = (val) => {
+    return parseInt(val.base, val.number)
+  }
+  
+  console.log(toDecimal({base: 2, number: 101}))
+
+
+#  Rest parameter / spread operator
+
+  const toDecimal = (base,  ...numbers){
+    console.log(numbers); //101, 111, 1010
+    return numbers.map(num => parseInt(num, base));
+  }
+  console.log(toDecimal(2, 101, 111, 1010))
+
+
+# import and export syntax
+
+# classes in react
+
+------------------------------------------------
+
+
+# create a node server
+# node server will load our initial html from react component
+# node api server to talk to the database 
+
+
+* create a github and package.json (install & track devpendecies)
+  > npm init
+  > git init
+* two types of packages, main dependecies are use in production and dev-dependecies are for local development environment
+
+  > npm i -S express - create node server
+  > npm i -S mongodb - create database server
+  > npm i -S react react-dom - react to describ our user interface and react-dom to render those user interface
+
+  # dev-dependencies
+  > npm install --save-dev webpack // translate modular code. as webpack loader, we use babel to transpile our es6 to es5
+
+  > npm i -D babel-cli babel-loader babel-preset-es2015 babel-stage-2 babel-preset-react
+  > npm i -D nodemon // auto restart
+  > npm i -D eslint eslint-plugin-react babel-eslint
+
+
+src -  source of generated working files
+public - to host all static assets
+api - backend server
+
+# Instruct babel to use these three presets - you need .babelrc configuration
+
+
+
+
+
+2: Node as web server
+    - create express server
+3: React basics 
+    - element and JSX
+    - Compnent
+    - component w/modules
+    - component state
+    - component life cycle
+4: Working w/ data
+    - loading & displaying data
+    - Fetch data from remote
+  
+5: Rendering on the server
+    - Fetching data from the server
+    - ReactDOMSErver
+    
+6: Rounting on client
+    - 
+7: Working w/MongoDB
